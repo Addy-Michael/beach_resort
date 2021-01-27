@@ -540,11 +540,12 @@ label p {
 .toggle div {
   height: 3px;
   width: 100%;
-  background: var(--color-primary);
   position: relative;
   top: 50%;
   transition: transform 0.2s, background 0.2s;
   padding: 1px;
+  transform: translateX(-1px);
+  background: transparent;
 }
 
 .toggle div::before,
@@ -559,23 +560,27 @@ label p {
 
 .toggle div::before {
   top: -1rem;
+  transform: translateY(1rem) rotate(45deg);
 }
 
 .toggle div::after {
   top: 1rem;
+  transform: translateY(-1rem) rotate(-45deg);
 }
 
 .contents input:checked + label .toggle div {
-  transform: translateX(-1px);
-  background: transparent;
+  transform: translateX(0);
+  background: var(--color-primary);
 }
 
 .contents input:checked + label .toggle div::before {
-  transform: translateY(1rem) rotate(45deg);
+  transform: translateY(0) rotate(0);
+  top: -1rem;
 }
 
 .contents input:checked + label .toggle div::after {
-  transform: translateY(-1rem) rotate(-45deg);
+  transform: translateY(0) rotate(0);
+  top: 1rem;
 }
 
 input {
