@@ -193,12 +193,16 @@ li {
   justify-content: space-between;
   align-items: center;
   color: var(--color-secondary-light);
+  position: sticky;
+  top: 0;
+  z-index: 2;
 }
 
 .contents .contact h2 {
   font-weight: 300;
   text-transform: capitalize;
   padding: 1.5rem;
+  padding-right: 0;
 }
 
 .contents .contact .contact-info .icon {
@@ -255,7 +259,8 @@ li {
 
 .contents .beach .information .main-info {
   background: var(--color-primary);
-  min-height: 40rem;
+  /* FOR TESTING PURPOSES */
+  /* min-height: 40rem; */
   flex: 0 0 50rem;
   margin-right: 5rem;
   box-shadow: var(--shadow);
@@ -282,7 +287,6 @@ li {
 
 /* REVIEWS */
 .contents .beach .information .reviews {
-  flex: 1;
   display: flex;
   flex-direction: column;
 }
@@ -520,8 +524,8 @@ label {
   position: fixed;
   z-index: 3;
   top: 10.5rem;
-  display: flex;
   align-items: center;
+  display: none;
 }
 
 label p {
@@ -544,8 +548,8 @@ label p {
   top: 50%;
   transition: transform 0.2s, background 0.2s;
   padding: 1px;
-  transform: translateX(-1px);
-  background: transparent;
+
+  background: var(--color-primary);
 }
 
 .toggle div::before,
@@ -560,27 +564,23 @@ label p {
 
 .toggle div::before {
   top: -1rem;
-  transform: translateY(1rem) rotate(45deg);
 }
 
 .toggle div::after {
   top: 1rem;
-  transform: translateY(-1rem) rotate(-45deg);
 }
 
 .contents input:checked + label .toggle div {
-  transform: translateX(0);
-  background: var(--color-primary);
+  transform: translateX(-1px);
+  background: transparent;
 }
 
 .contents input:checked + label .toggle div::before {
-  transform: translateY(0) rotate(0);
-  top: -1rem;
+  transform: translateY(1rem) rotate(45deg);
 }
 
 .contents input:checked + label .toggle div::after {
-  transform: translateY(0) rotate(0);
-  top: 1rem;
+  transform: translateY(-1rem) rotate(-45deg);
 }
 
 input {
@@ -588,5 +588,5 @@ input {
 }
 
 .contents input:checked ~ .sidebar {
-  display: none;
+  display: fixed;
 }

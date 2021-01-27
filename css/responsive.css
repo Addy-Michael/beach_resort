@@ -1,0 +1,67 @@
+body {
+  background: var(--color-primary);
+}
+
+.container {
+  margin: 0 auto;
+}
+
+@media only screen and (max-width: 64.44em) {
+  .contents .beach .information {
+    display: block;
+  }
+
+  .contents .beach .information .main-info {
+    margin-right: 0;
+  }
+
+  .contents .beach .information .reviews {
+    margin-top: 1.5rem;
+  }
+}
+
+@media only screen and (max-width: 50em) {
+  .contents .sidebar {
+    display: none;
+  }
+
+  label {
+    display: flex;
+    top: 2.5rem;
+  }
+
+  .contents input:checked ~ .sidebar {
+    display: flex;
+  }
+
+  .contents .images figure:nth-child(2) {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 35.62em) {
+  .container {
+    overflow-x: hidden;
+  }
+
+  .contents .contact {
+    text-align: center;
+    display: block;
+  }
+
+  .contents .contact .location {
+    display: inline-block;
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+
+  .contents .images figure:last-child {
+    display: none;
+    object-fit: cover;
+  }
+
+  /* ABOUT */
+  .contents .about .information .services .detail {
+    flex-direction: column;
+  }
+}
